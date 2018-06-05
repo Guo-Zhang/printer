@@ -20,7 +20,10 @@ from PIL import ImageDraw
 
 
 # font
-fnt = "/Library/Fonts/AdobeHeitiStd-Regular (v5.010).otf"
+# Mac
+# fnt = "/Library/Font/simhei.ttf"
+# Windows
+fnt = "C:\Windows\Fonts\simhei.ttf"
 
 # paramaters
 params = [
