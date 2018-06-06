@@ -1,5 +1,8 @@
 .idea
-build
-dist/target
 *.spec
 __pycache__
+build
+dist/target
+target
+info.csv
+
