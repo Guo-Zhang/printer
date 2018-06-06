@@ -16,6 +16,7 @@ import csv
 import os
 
 import tkinter as tk
+import tkinter.font as tkFont
 
 from PIL import Image
 from PIL import ImageFont
@@ -122,14 +123,18 @@ def gen_pics(vars):
 # main
 if __name__=="__main__":
     master = tk.Tk()
-    master.title('图片打印机')
-    # master.geometry('800x600')
+    master.title('佛力超荐系统——黄建松')
+    # master.geometry('400x450')
 
-    tk.Label(master, text="姓名：").grid(row=0,sticky='W')
-    tk.Label(master, text="家庭住址：").grid(row=1, sticky='W')
+    tkfnt = tkFont.Font(family='Fixdsys', size=20)
+    padx  = 15
+    pady = 10
 
-    e1 = tk.Entry(master)
-    e2 = tk.Entry(master)
+    tk.Label(master, text="姓名：", font=tkfnt).grid(row=0, column=0,sticky='W', padx=padx, pady=pady)
+    tk.Label(master, text="家庭住址：", font=tkfnt).grid(row=1, column=0, sticky='W', padx=padx, pady=pady)
+
+    e1 = tk.Entry(master, font=tkfnt, width=30)
+    e2 = tk.Entry(master, font=tkfnt, width=30)
 
     e1.insert(10, "慕容测试")
     e2.insert(10, "测试地址")
@@ -137,14 +142,14 @@ if __name__=="__main__":
     e1.grid(row=0, column=1)
     e2.grid(row=1, column=1)
 
-    tk.Label(master, text="请选择图片：").grid(row=3, sticky='W', columnspan=2)
+    tk.Label(master, text="请选择图片：", font=tkfnt).grid(row=3, sticky='W', columnspan=2, padx=padx, pady=pady)
     vars = []
     for i, pic in enumerate(pics):
         v = tk.IntVar()
-        tk.Checkbutton(master, text=pic, variable=v).grid(row=4+i, sticky='W', columnspan=2, padx=10)
+        tk.Checkbutton(master, text=pic, variable=v, font=tkfnt).grid(row=4+i, sticky='W', columnspan=2, padx=padx*1.5)
         vars.append(v)
 
-    b1 = tk.Button(master, text='生成', command=lambda: gen_pics(vars)).grid(row=9, column=0, sticky='E')
-    b2 = tk.Button(master, text='退出', command=master.quit).grid(row=9, column=1)
+    b1 = tk.Button(master, text='生成', command=lambda: gen_pics(vars), font=tkfnt).grid(row=9, column=0, sticky='E', pady=pady)
+    b2 = tk.Button(master, text='退出', command=master.quit, font=tkfnt).grid(row=9, column=1)
 
     tk.mainloop()
