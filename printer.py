@@ -41,9 +41,9 @@ pics = ["长生禄位", "往生莲位-本宅", "往生莲位-亡灵", "往生莲
 
 # font
 # Mac
-fnt = "/Library/Font/simhei.ttf"
+# fnt = "/Library/Font/simhei.ttf"
 # Windows
-# fnt = "C:\Windows\Fonts\simhei.ttf"
+fnt = "C:\Windows\Fonts\simhei.ttf"
 
 # paramaters
 params = [
@@ -100,10 +100,10 @@ def gen_pic(choice):
 
     # Write information into csv files with GBK encoding
     if not os.path.exists('info.csv'):
-        with open('info.csv', 'w', encoding='GBK') as f:
+        with open('info.csv', 'w', encoding='GBK', newline='') as f:
             writer = csv.writer(f)
             writer.writerow(['姓名','家庭地址','图片'])
-    with open('info.csv','a', encoding='GBK') as f:
+    with open('info.csv','a', encoding='GBK', newline='') as f:
         writer = csv.writer(f)
         writer.writerow([e1.get(),e2.get(),pics[choice]])
 
@@ -113,6 +113,10 @@ def gen_pics(vars):
             gen_pic(i)
         elif var.get()==0:
             continue
+
+    # Clear the Entry
+    e1.delete(0, tk.END)
+    e2.delete(0, tk.END)
 
 
 # main
