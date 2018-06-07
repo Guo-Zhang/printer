@@ -42,17 +42,17 @@ pics = ["长生禄位", "往生莲位-本宅", "往生莲位-亡灵", "往生莲
 
 # font
 # Mac
-# fnt = "/Library/Font/simhei.ttf"
+fnt = "/Library/Font/simhei.ttf"
 # Windows
-fnt = "C:\Windows\Fonts\simhei.ttf"
+# fnt = "C:\Windows\Fonts\simhei.ttf"
 
 # paramaters
 params = [
-    [340, 0.44, 0.47],
+    [150, 0.44, 0.47],
     [140, 0.067, 0.53, 90, 0.795, 0.4],
-    [260, 0.067, 0.55],
-    [260, 0.067, 0.55, 230, 0.456, 0.413, 0.415],
-    [260, 0.065, 0.55],
+    [130, 0.067, 0.55],
+    [130, 0.067, 0.55, 110, 0.456, 0.413, 0.415],
+    [130, 0.065, 0.55],
 ]
 
 def split_surname(name):
@@ -75,7 +75,7 @@ def row2column(x):
     return result
 
 def gen_pic(choice):
-    im = Image.open('./base/base%s.jpg'%choice)
+    im = Image.open('./base/base%s.jpeg'%choice)
 
     name = row2column(e1.get())
     address = row2column(e2.get())

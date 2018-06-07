@@ -6,3 +6,5 @@ dist/target
 target
 info.csv
 
+
+*.zip
