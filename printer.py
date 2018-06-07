@@ -14,6 +14,7 @@
 # import packages
 import csv
 import os
+import sys
 
 import tkinter as tk
 import tkinter.font as tkFont
@@ -42,9 +43,11 @@ pics = ["长生禄位", "往生莲位-本宅", "往生莲位-亡灵", "往生莲
 
 # font
 # Mac
-fnt = "/Library/Font/simhei.ttf"
+if sys.platform=="darwin":
+    fnt = "/Library/Font/simhei.ttf"
 # Windows
-# fnt = "C:\Windows\Fonts\simhei.ttf"
+elif sys.platform=="win32":
+    fnt = "C:\Windows\Fonts\simhei.ttf"
 
 # paramaters
 params = [
